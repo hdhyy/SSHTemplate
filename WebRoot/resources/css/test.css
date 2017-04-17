@@ -1,0 +1,17 @@
+.box {
+    width: 355px;
+    height: 500px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.list {
+	width:48%;
+	height: 29%;
+    position: absolute;
+}
+.hide {
+	visibility:hidden;
+}

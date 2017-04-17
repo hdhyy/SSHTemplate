@@ -1,0 +1,112 @@
+﻿body { /*background:#F4F4F4;*/
+	background-image: url(../images/img/background.png);
+               /*filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";  
+               -moz-background-size:100% 100%;  
+               background-size:100% 100%;*/
+
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #737F89;
+}
+
+/* ================= Login Form ================= */
+.loginform {
+	width: 360px;
+	margin: 0px auto;
+	margin-right :80px;
+	margin-top: 250px;
+	box-shadow: 0px 4px 90px #EEEEEE;
+	z-index:960px;
+}
+
+.loginform .title {
+	background: url(../images/img/login-title-comb.png);
+	text-align: center;
+	height: 50px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.loginform .error {
+	text-align: center;
+	font: 15px Arial, Helvetica, sans-serif;
+	color: #ff0000;
+	padding-bottom: 5px;
+}
+
+.loginform .body {
+	padding: 22px 29px 42px 29px;
+	background: url(../images/img/login-form-body-bg.png);
+}
+
+.login-input-user {
+	border: none;
+	font: 19px Arial, Helvetica, sans-serif;
+	color: #B6C3C9;
+	width: 180px;
+	border: 1px solid #CED3D8;
+	border-radius: 3px;
+	border-top: 1px solid #A0A4A9;
+	padding: 10px;
+	padding-left: 40px;
+	margin-bottom: 19px;
+	background:url(../images/img/username-input.png) -2px  -2px;
+}
+.login-input-pass {
+	border: none;
+	font: 19px Arial, Helvetica, sans-serif;
+	color: #B6C3C9;
+	width: 180px;
+	border: 1px solid #CED3D8;
+	border-radius: 3px;
+	border-top: 1px solid #A0A4A9;
+	padding: 10px;
+	padding-left: 40px;
+	margin-bottom: 19px;
+	background: url(../images/img/password-input.png) -2px -2px;
+}
+
+.login-input-code {
+	border: none;
+	font: 19px Arial, Helvetica, sans-serif;
+	color: #B6C3C9;
+	width: 50px;
+	border: 1px solid #CED3D8;
+	border-radius: 3px;
+	border-top: 1px solid #A0A4A9;
+	padding: 10px;
+	padding-left: 40px;
+	margin-bottom: 19px;
+	background: url(../images/img/code-input.png) -2px -2px;
+}
+
+.loginform .log-lab {
+	color: #A4AAB2;
+	float:left;
+	font-size: 16px;
+	font-weight: bold;
+	/*display: block;不分行*/
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-right: 10px;
+}
+
+.loginform .button {
+	width: 300px;
+	height: 50px;
+	font: bold 16px Arial, Helvetica, sans-serif;
+	color: #fff;
+	background: url(../images/img/login-button.png) 0px 0px;
+	border: none;
+}
+
+.loginform .button:hover {
+	background: url(../images/img/login-button.png) 0px -50px;
+	cursor: pointer;
+}
+
+.loginform .button:active {
+	background: url(../images/img/login-button.png) 0px -100px;
+}

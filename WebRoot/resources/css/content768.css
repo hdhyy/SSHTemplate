@@ -1,0 +1,58 @@
+#index-body{
+	background-color:#EEEEEE;
+}
+#content-table {
+	margin-top:5%;
+	margin-left:25%;
+	width: 50%;
+}
+.box {
+	float:left;
+	margin-left:15px;
+	margin-right:15px;
+	margin-bottom:15px;
+	width: 630px;
+	height: 200px;
+    position: relative;
+}
+.list{
+    position: absolute;
+}
+.table {
+	border: 2px solid #FFFFFF;
+}
+#content-message{
+	text-align:center;
+	font-size:1.7em;
+	font-family:Microsoft YaHei;
+}
+.viewport-flip{
+	position:none;
+}
+#ranklist,#ranklist-last {
+	margin-left:20px;
+	font-size:1.1em;
+	font-family:Microsoft YaHei;
+}
+.content-block{
+	float:left;
+	width: 630px;
+	height: 200px;
+	font-family:Microsoft YaHei;
+}
+#sum-block{
+	margin-top:80px;
+	margin-left:45px;
+}
+.big-title{
+	margin-top:50px;
+	margin-left:50px;
+	font-size:40px;
+	font-family:Microsoft YaHei;
+}
+.small-title{
+	margin-top:8px;
+	margin-left:50px;
+	font-size:25px;
+	font-family:Microsoft YaHei;
+}
