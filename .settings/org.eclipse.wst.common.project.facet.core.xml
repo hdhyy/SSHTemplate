@@ -7,4 +7,5 @@
   <installed facet="me.hibernate" version="4.1"/>
   <installed facet="me.spring" version="4.1"/>
   <installed facet="wst.jsdt.web" version="1.0"/>
+  <installed facet="web.struts2" version="2.1"/>
 </faceted-project>

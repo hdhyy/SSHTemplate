@@ -6,8 +6,19 @@
   </context-param>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/config/spring/Application*.xml</param-value>
+    <param-value>/WEB-INF/config/spring/applicationContext*.xml</param-value>
   </context-param>
+  
+  
+  <filter>
+      <filter-name>struts2</filter-name>
+      <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+      <init-param>
+          <param-name>actionPackages</param-name>
+          <param-value>org.toybrick.pro.action</param-value>
+      </init-param>
+  </filter>
+
   <filter>
     <filter-name>HiddenHttpMethodFilter</filter-name>
     <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
@@ -24,6 +35,15 @@
       <param-value>utf-8</param-value>
     </init-param>
   </filter>
+  
+  <filter-mapping>
+      <filter-name>struts2</filter-name>
+      <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>struts2</filter-name>
+      <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
   <filter-mapping>
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>

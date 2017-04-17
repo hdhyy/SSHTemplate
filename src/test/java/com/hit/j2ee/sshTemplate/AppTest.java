@@ -1,4 +1,4 @@
-package com.hit.j2ee.sshTemplate;
+package java.com.hit.j2ee.sshTemplate;
 
 import junit.framework.Test;
 

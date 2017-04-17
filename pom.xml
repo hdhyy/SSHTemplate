@@ -15,7 +15,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
@@ -348,11 +347,28 @@
 		    <artifactId>fastjson</artifactId>
 		    <version>1.2.17</version>
 		</dependency>
+	 <!-- struts2依赖包 -->  
+    <dependency>  
+        <groupId>org.apache.struts</groupId>  
+        <artifactId>struts2-core</artifactId>
+        <version>2.3.14</version>
+    </dependency>
+     <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-convention-plugin</artifactId>
+        <version>2.5.2</version>
+    </dependency> 
+    <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-spring-plugin</artifactId>
+        <version>2.5.2</version>
+    </dependency>
 
     </dependencies>
 
     <build>
-    	<sourceDirectory>src/main/java/</sourceDirectory>
+    	<sourceDirectory>src/java/</sourceDirectory>
+    	<testSourceDirectory>src/test/</testSourceDirectory>
         <resources>
             <resource>
                 <directory>java</directory>
