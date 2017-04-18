@@ -9,6 +9,7 @@
 	<configs>
 	</configs>
 	<autoconfigs>
+		<config>target/m2e-jee/web-resources/WEB-INF/config/spring/applicationContext-db.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
