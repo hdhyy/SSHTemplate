@@ -1,10 +1,5 @@
 package com.hit.j2ee.sshTemplate.dao.impl;
 
-import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hit.j2ee.sshTemplate.dao.UserDao;
@@ -19,59 +14,89 @@ import com.hit.j2ee.sshTemplate.pojo.Users;
  */  
   
 @Repository("userDao") 
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl extends BaseDaoImpl<Users, String> implements UserDao {
 
-		@Autowired
-	    private SessionFactory sessionFactory;  
-	  
-	    private Session getCurrentSession() {  
-	        return this.sessionFactory.getCurrentSession();  
-	    }  
-	  
-	    @Override  
-	    public Users load(String id) {  
-	        return (Users) this.getCurrentSession().load(Users.class, id);  
-	    }  
-	  
-	    @Override  
-	    public Users get(String id) {  
-	        return (Users) this.getCurrentSession().get(Users.class, id);  
-	    }  
-	  
-	    @SuppressWarnings("unchecked")  
-	    @Override  
-	    public List<Users> findAll() {  
-	        List<Users> Userss = this.getCurrentSession()  
-	                .createQuery("from Users").list();  
-	        return Userss;  
-	    }  
-	  
-	    @Override  
-	    public void persist(Users entity) {  
-	        this.getCurrentSession().persist(entity);  
-	  
-	    }  
-	  
-	    @Override  
-	    public String save(Users entity) {  
-	        return (String) this.getCurrentSession().save(entity);  
-	    }  
-	  
-	    @Override  
-	    public void saveOrUpdate(Users entity) {  
-	        this.getCurrentSession().saveOrUpdate(entity);  
-	    }  
-	  
-	    @Override  
-	    public void delete(String id) {
-	        Users entity = this.load(id);  
-	        this.getCurrentSession().delete(entity);  
-	    }  
-	  
-	    @Override  
-	    public void flush() {  
-	        this.getCurrentSession().flush();  
-	  
-	    }  
+//		@Autowired
+//	    private SessionFactory sessionFactory;  
+//	  
+//	    private Session getCurrentSession() {
+//	        return this.sessionFactory.getCurrentSession();  
+//	    }  
+//	  
+//	    @Override  
+//	    public Users load(String id) {  
+//	        return (Users) this.getCurrentSession().load(Users.class, id);
+//	    }  
+//	  
+//	    @Override  
+//	    public Users get(String id) {  
+//	        return (Users) this.getCurrentSession().get(Users.class, id);  
+//	    }  
+//	  
+//	    @SuppressWarnings("unchecked")  
+//	    @Override  
+//	    public List<Users> findAll() {  
+//	        List<Users> Userss = this.getCurrentSession()  
+//	                .createQuery("from Users").list();  
+//	        return Userss;
+//	    }  
+//	  
+//	    @Override  
+//	    public void persist(Users entity) {  
+//	        this.getCurrentSession().persist(entity);
+//	  
+//	    }  
+//	  
+//	    @Override  
+//	    public String save(Users entity) {  
+//	        return (String) this.getCurrentSession().save(entity);  
+//	    }  
+//	  
+//	    @Override  
+//	    public void saveOrUpdate(Users entity) {  
+//	        this.getCurrentSession().saveOrUpdate(entity);  
+//	    }  
+//	  
+//	    @Override  
+//	    public void delete(String id) {
+//	        Users entity = this.load(id);  
+//	        this.getCurrentSession().delete(entity);  
+//	    }  
+//	  
+//	    @Override  
+//	    public void flush() {  
+//	        this.getCurrentSession().flush();  
+//	  
+//	    }
+//
+//		@Override
+//		public void update(Users entity) {
+//			// TODO Auto-generated method stub
+//			
+//		}
+//
+//		@Override
+//		public void deleteByIds(String... ids) {
+//			// TODO Auto-generated method stub
+//			
+//		}
+//
+//		@Override
+//		public void deleteAll(Collection<Users> entities) {
+//			// TODO Auto-generated method stub
+//			
+//		}
+//
+//		@Override
+//		public void setEntityClass(Class<?> entityClass) {
+//			// TODO Auto-generated method stub
+//			
+//		}
+//
+//		@Override
+//		public Users findById(String id) {
+//			// TODO Auto-generated method stub
+//			return null;
+//		}  
 
 }

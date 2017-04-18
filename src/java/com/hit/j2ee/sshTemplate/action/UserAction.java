@@ -1,8 +1,6 @@
 package com.hit.j2ee.sshTemplate.action;
 
 import java.io.UnsupportedEncodingException;  
-import javax.servlet.http.HttpServletRequest;  
-import javax.servlet.http.HttpServletResponse;  
   
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Namespace;
@@ -10,30 +8,29 @@ import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
-import com.opensymphony.xwork2.ActionSupport;  
   
-@Namespace("/main/user")
+@Namespace("/user")
 @ParentPackage(value="struts-default")
 @Results({
     @Result(name="success" , location="/main/desktop/desktop.jsp"),
     @Result(name="fail" , location="/main/user/login.jsp")
 })
-@Service(value="userAction")
+@Controller(value="userAction")
 @Scope(value="prototype")
-public class UserAction extends ActionSupport {  
-  
+public class UserAction extends BaseAction {
+
     private static final long serialVersionUID = 1L;  
   
-    public String execute(){  
-        return SUCCESS;  
+    public String execute(){
+        return SUCCESS;
     }  
       
     public String login() {
         try {  
-            HttpServletRequest request = ServletActionContext.getRequest();  
-            HttpServletResponse response = ServletActionContext.getResponse();  
+            request = ServletActionContext.getRequest();  
+            response = ServletActionContext.getResponse();  
             request.setCharacterEncoding("UTF-8");  
             response.setContentType("text/html;charset=utf-8");  
             String username = request.getParameter("username");  
