@@ -3,7 +3,7 @@ package com.hit.j2ee.sshTemplate.dao.impl;
 import org.springframework.stereotype.Repository;
 
 import com.hit.j2ee.sshTemplate.dao.UserDao;
-import com.hit.j2ee.sshTemplate.pojo.Users;
+import com.hit.j2ee.sshTemplate.pojo.User;
 
 /** 
  * 创建时间：2014-4-16 下午12:51:47 
@@ -14,7 +14,7 @@ import com.hit.j2ee.sshTemplate.pojo.Users;
  */  
   
 @Repository("userDao") 
-public class UserDaoImpl extends BaseDaoImpl<Users, String> implements UserDao {
+public class UserDaoImpl extends BaseDaoImpl<User, String> implements UserDao {
 
 //		@Autowired
 //	    private SessionFactory sessionFactory;  

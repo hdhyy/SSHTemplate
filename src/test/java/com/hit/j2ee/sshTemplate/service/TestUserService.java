@@ -8,7 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;  
   
 import com.alibaba.fastjson.JSON;
-import com.hit.j2ee.sshTemplate.pojo.Users;
+import com.hit.j2ee.sshTemplate.pojo.User;
 import com.hit.j2ee.sshTemplate.service.UserService;  
   
 /** 
@@ -30,7 +30,7 @@ public class TestUserService {
   
     @Test  
     public void save() {  
-        Users userInfo = new Users();  
+        User userInfo = new User();  
         userInfo.setUsername("hd");
         userInfo.setVersion(1001);
         String id = userService.save(userInfo);

@@ -18,7 +18,7 @@ import com.hit.j2ee.sshTemplate.common.encrypt.MD5Util;
 @Entity
 @Table(name = "Users", schema = "dbo", catalog = "template")
 
-public class Users implements java.io.Serializable {
+public class User implements java.io.Serializable {
 
 	// Fields
 	
@@ -42,7 +42,7 @@ public class Users implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public Users() {
+	public User() {
 	}
 	
 	
@@ -53,7 +53,7 @@ public class Users implements java.io.Serializable {
 	* @author javaee象拔蚌小组
 	*/
 	
-	public Users(String username, String password) {
+	public User(String username, String password) {
 		this.username = username;
 		this.password = password;
 		this.token = "";
@@ -65,7 +65,7 @@ public class Users implements java.io.Serializable {
 
 
 	/** minimal constructor */
-	public Users(String id, String username, String password, String status, Integer version, Boolean isDeleted) {
+	public User(String id, String username, String password, String status, Integer version, Boolean isDeleted) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -75,7 +75,7 @@ public class Users implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Users(String id, String username, String password, String token, String status, Integer version,
+	public User(String id, String username, String password, String token, String status, Integer version,
 			Boolean isDeleted) {
 		this.id = id;
 		this.username = username;

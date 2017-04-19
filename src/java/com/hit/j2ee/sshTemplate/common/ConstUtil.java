@@ -29,7 +29,8 @@ public class ConstUtil {
 	public static final String ADMIN_INTERFACE = "/admin";
 	public static final String MANAGER_INTERFACE = ADMIN_INTERFACE + "/manager";
 	//session信息常量
-	public static final String SESSION_USER_INFO = "userInfo";
+	public static final String KEY_USER_INFO = "userInfo";
+	public static final String KEY_VERIFICATION_CODE = "verification_code";
 	//header信息常量
 	public static final String HEADER_AUTHORIZATION = "Authorization";
 	public static final String HEADER_TOKEN = "token";
@@ -60,6 +61,7 @@ public class ConstUtil {
 	
 	//其他常量
 	public static final String DEFULT_PORTRAIT = "http://s16.sinaimg.cn/mw690/003gRgrCzy73OGZAV434f&690";
+
 	//返回消息常量
 	public static String LOGIN_SUCCESS = "99010101"; //登录成功
 	public static String LOGIN_WRONG_PASSWORD = "99010102";//账号/密码错误

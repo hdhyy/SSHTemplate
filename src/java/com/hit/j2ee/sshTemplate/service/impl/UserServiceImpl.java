@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hit.j2ee.sshTemplate.dao.UserDao;
-import com.hit.j2ee.sshTemplate.pojo.Users;
+import com.hit.j2ee.sshTemplate.pojo.User;
 import com.hit.j2ee.sshTemplate.service.UserService;
 
 /** 
@@ -23,32 +23,32 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
   
     @Override  
-    public Users load(String id) {
+    public User load(String id) {
         return null;  
     }  
   
     @Override  
-    public Users get(String id) {  
+    public User get(String id) {  
         return userDao.get(id);  
     }  
   
     @Override  
-    public List<Users> findAll() {  
+    public List<User> findAll() {  
         return userDao.findAll();  
     }  
   
     @Override  
-    public void persist(Users entity) {  
+    public void persist(User entity) {  
     	userDao.persist(entity);  
     }  
   
     @Override  
-    public String save(Users entity) {  
+    public String save(User entity) {  
         return userDao.save(entity);  
     }  
   
     @Override  
-    public void saveOrUpdate(Users entity) {  
+    public void saveOrUpdate(User entity) {  
     	userDao.saveOrUpdate(entity);  
     }  
   
