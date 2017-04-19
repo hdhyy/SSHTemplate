@@ -10,4 +10,5 @@ import com.hit.j2ee.sshTemplate.pojo.User;
  */  
 public interface UserDao extends BaseDao<User, String>{
 
+	public void exampleMethod();
 }

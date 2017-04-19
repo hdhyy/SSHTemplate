@@ -9,4 +9,5 @@ import com.hit.j2ee.sshTemplate.pojo.User;
  */  
 public interface UserService extends BaseService<User, String>{
 
+	public boolean isUserNameExist(String userName);
 }

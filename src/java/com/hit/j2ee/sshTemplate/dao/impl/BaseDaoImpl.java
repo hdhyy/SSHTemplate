@@ -15,12 +15,14 @@ import org.hibernate.SessionFactory;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.orm.hibernate4.HibernateCallback;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import com.hit.j2ee.sshTemplate.common.utils.ReflectionUtils;
 import com.hit.j2ee.sshTemplate.dao.BaseDao;
 
 
 //继承Spring的hibernate实现类，将hibernate交给Spring管理
+@Repository("baseDao")
 public class BaseDaoImpl<T, PK extends Serializable> extends HibernateDaoSupport implements BaseDao<T, PK> {
 
 	private Class<?> entityClass = ReflectionUtils.getSuperClassGenricType(this.getClass());

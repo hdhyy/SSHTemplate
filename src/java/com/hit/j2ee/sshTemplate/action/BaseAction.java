@@ -23,7 +23,5 @@ public class BaseAction extends ActionSupport implements ServletRequestAware,Ser
 		this.request = request;
 	}
 	
-	
-	
 
 }

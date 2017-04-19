@@ -1,8 +1,6 @@
 package com.hit.j2ee.sshTemplate.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.hit.j2ee.sshTemplate.dao.UserDao;
@@ -17,49 +15,28 @@ import com.hit.j2ee.sshTemplate.service.UserService;
  * 描述： userService实现类
  */  
 @Service("userService")  
-public class UserServiceImpl implements UserService {  
+public class UserServiceImpl extends BaseServiceImpl<User, String> implements UserService {  
   
-    @Autowired  
-    private UserDao userDao;
+    @Resource
+    private void setUserDao(UserDao userDao){
+    	this.baseDao = userDao;
+    }
+
+    private UserDao getUserDao(){
+    	return (UserDao)baseDao;
+    }
+    public UserServiceImpl() {
+		super();
+		setClazz(User.class);
+		this.getUserDao().exampleMethod();
+	}
+
+	@Override
+	public boolean isUserNameExist(String userName) {
+
+		return baseDao.findFirstByCondition(" and o.name=?", new Object[]{ userName }, false)!=null;
+	}
   
-    @Override  
-    public User load(String id) {
-        return null;  
-    }  
-  
-    @Override  
-    public User get(String id) {  
-        return userDao.get(id);  
-    }  
-  
-    @Override  
-    public List<User> findAll() {  
-        return userDao.findAll();  
-    }  
-  
-    @Override  
-    public void persist(User entity) {  
-    	userDao.persist(entity);  
-    }  
-  
-    @Override  
-    public String save(User entity) {  
-        return userDao.save(entity);  
-    }  
-  
-    @Override  
-    public void saveOrUpdate(User entity) {  
-    	userDao.saveOrUpdate(entity);  
-    }  
-  
-    @Override  
-    public void delete(String id) {  
-    	userDao.delete(id);  
-    }  
-  
-    @Override  
-    public void flush() {  
-    	userDao.flush();  
-    }  
+
   
 }  

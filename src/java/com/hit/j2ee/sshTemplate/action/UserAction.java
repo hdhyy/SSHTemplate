@@ -28,7 +28,7 @@ public class UserAction extends BaseAction {
     }  
       
     public String login() {
-        try {  
+        try {
             request = ServletActionContext.getRequest();  
             response = ServletActionContext.getResponse();  
             request.setCharacterEncoding("UTF-8");  
