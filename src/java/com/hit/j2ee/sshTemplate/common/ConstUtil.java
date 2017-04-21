@@ -34,6 +34,8 @@ public class ConstUtil {
 	//header信息常量
 	public static final String HEADER_AUTHORIZATION = "Authorization";
 	public static final String HEADER_TOKEN = "token";
+	//页面地址常量
+	public static final String BASE_JSP_PATH="/WEB-INF/views/";
 	//HQL常量
 	//用户登录
 	public static final String USER_LOGIN_HQL = "from Users where username = :username and "

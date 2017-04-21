@@ -19,13 +19,15 @@ public class ExampleInterceptor implements Interceptor{
 	}
 
 	@Override
-	public String intercept(ActionInvocation arg0) throws Exception {
+	public String intercept(ActionInvocation invocation) throws Exception {
 		System.out.println("Action执行之前插入代码");
 		
-		//执行目标方法，调用下一个拦截器
+		//执行目标方法，调用下一个拦截器 或执行Action
+		final String res = invocation.invoke();
 		
+		System.out.println("Action 执行后插入代码");
 		
-		return null;
+		return res;
 	}
 
 }

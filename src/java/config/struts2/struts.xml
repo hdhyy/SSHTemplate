@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"  
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<include file="struts-default.xml" />
+
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 指定由spring负责action对象的创建 -->
+	<constant name="objectFactory" value="spring" />
+	<!--指定Spring框架的自动装配模式，该属性的默认值是name，即默认根据Bean的name属性自动装配-->
+	<constant name="struts.objectFactory.spring.autoWire" value="name"/>
+	<!--该属性指定整合Spring框架时，是否缓存Bean实例，该属性只允许使用true和false两个属性值，它的默认值是true.通常不建议修改该属性值-->
+	<constant name="struts.objectFactory.spring.useClassCache" value="true"/>
+	<!-- 所有匹配*.action的请求都由struts2处理 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 是否启用开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- struts配置文件改动后，是aa否重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 设置浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 每次HTTP请求系统都重新加载资源文件，有助于开发 -->
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- 文件上传最大值 -->
+	<constant name="struts.multipart.maxSize" value="104857600" />
+	<!--该属性指定上传文件的临时保存路径，该属性的默认值是javax.servlet.context.tempdir.-->
+	<constant name="struts.multipart.saveDir" value=""/>
+	<!-- 让struts2支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- Action名称中是否还是用斜线 -->
+	<constant name="struts.enable.SlashesInActionNames" value="false" />
+	<!-- 允许标签中使用表达式语法 -->
+	<constant name="struts.tag.altSyntax" value="true" />
+	<!-- 对于WebLogic,Orion,OC4J此属性应该设置成true -->
+	<constant name="struts.dispatcher.parametersWorkaround" value="false" />
+
+	<!-- 使用Convention插件,实现约定大于配置的零配置文件风格. 特殊的Result路径在Action类中使用@Result设定. -->
+	<constant name="struts.convention.exclude.packages" value="com.hit.j2ee.sshTemplate.service" />
+	<!-- 进行扫描的根包，该包会被扫描成action -->
+	<constant name="struts.convention.action.packages" value="com.hit.j2ee.sshTemplate.action" />
+	<!-- 返回页面地址 -->
+	<constant name="struts.convention.result.path" value="/WEB-INF/views/" />
+	<!-- 用于进行action查找的后缀 -->
+	<constant name="struts.convention.action.suffix" value="Action" />
+	<!--用于生成action名字时的分隔符，比如DemoCustAction会被映射成为demo_cust,同时用于形成返回文件，比如访问DemoAction，return的值为input，插件会去指定不睦下，查找demo_input.jsp文件 -->
+	<constant name="struts.convention.action.name.separator" value="_" />
+	<!-- 指定的包会被进行扫描 -->
+	<constant name="struts.convention.package.locators" value="action,actions,struts,struts2" />
+	<!-- 返回页面类型 -->
+	<constant name="struts.convention.relative.result.types" value="dispatcher,velocity,freemarker" />
+
+
+	
+	<!-- 用于CRUD Action的parent package -->
+	<package name="crud-default" extends="convention-default">
+		<!-- 基于paramsPrepareParamsStack, 增加store interceptor保证actionMessage在redirect后不会丢失 -->
+		<interceptors>
+			<interceptor-stack name="crudStack">
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="crudStack" />
+	</package>
+
+</struts>  

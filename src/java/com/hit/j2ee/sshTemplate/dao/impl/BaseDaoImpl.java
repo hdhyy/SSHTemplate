@@ -141,6 +141,8 @@ public class BaseDaoImpl<T, PK extends Serializable> extends HibernateDaoSupport
 		final String _hql = hql;
 		List<T> list = (List<T>) this.getHibernateTemplate().execute(new HibernateCallback() {
 			public Object doInHibernate(Session session) throws HibernateException {
+				System.err.println("--------------------");
+				System.err.println(_hql);
 				Query query = session.createQuery(_hql);
 				if (cacheable) {
 					query.setCacheable(true);
@@ -153,9 +155,12 @@ public class BaseDaoImpl<T, PK extends Serializable> extends HibernateDaoSupport
 	}
 
 	private void setParams(Query query, Object[] params) {
+		System.out.println("-------params' length:"+params.length+"---------------");
 		if (params != null && params.length > 0) {
 			for (int i = 0; i < params.length; i++) {
 				query.setParameter(i, params[i]);
+				System.out.println("---------------------");
+				System.out.println("---------"+params[i]+"--------");
 			}
 		}
 	}

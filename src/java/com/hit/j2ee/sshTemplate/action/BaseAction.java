@@ -9,7 +9,7 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
-public class BaseAction extends ActionSupport implements ServletRequestAware,ServletResponseAware{
+public abstract class BaseAction extends ActionSupport implements ServletRequestAware,ServletResponseAware{
 	
 	protected HttpServletRequest request;
 	protected HttpServletResponse response;

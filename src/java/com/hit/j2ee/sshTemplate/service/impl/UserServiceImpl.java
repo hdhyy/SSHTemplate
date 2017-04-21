@@ -15,26 +15,22 @@ import com.hit.j2ee.sshTemplate.service.UserService;
  * 描述： userService实现类
  */  
 @Service("userService")  
-public class UserServiceImpl extends BaseServiceImpl<User, String> implements UserService {  
+public class UserServiceImpl extends BaseServiceImpl<User, String,UserDao> implements UserService {  
   
-    @Resource
-    private void setUserDao(UserDao userDao){
+    @Resource(name="userDao")
+    private void setBaseDao(UserDao userDao){
     	this.baseDao = userDao;
     }
-
-    private UserDao getUserDao(){
-    	return (UserDao)baseDao;
-    }
+    
     public UserServiceImpl() {
 		super();
 		setClazz(User.class);
-		this.getUserDao().exampleMethod();
 	}
 
 	@Override
 	public boolean isUserNameExist(String userName) {
 
-		return baseDao.findFirstByCondition(" and o.name=?", new Object[]{ userName }, false)!=null;
+		return baseDao.findFirstByCondition(" and o.username=?", new Object[]{ userName }, false)!=null;
 	}
   
 

@@ -8,28 +8,24 @@ import com.hit.j2ee.sshTemplate.dao.BaseDao;
 import com.hit.j2ee.sshTemplate.service.BaseService;
 
 @Service("baseService")//没有指定value的话，默认是第一个字母小写的类名,可以看做是xml中的bean的id
-public class BaseServiceImpl<T, PK extends Serializable> implements BaseService<T, PK> {
+public class BaseServiceImpl<T, PK extends Serializable,BD extends BaseDao<T,PK>> implements BaseService<T, PK> {
 
-	protected BaseDao<T, PK> baseDao;
+	protected BD baseDao;
 
 	protected Class<?> clazz;//存储了具体操作的类,
 
-	
-	protected void setBaseDao(BaseDao<T, PK> baseDao){
-		this.baseDao = baseDao;
-	}
 	protected void setClazz(Class<?> clazz){
 		this.clazz = clazz;
 	}
 	
 	@Override
 	public T load(PK id) {
-		return baseDao.load(id);
+		return (T) baseDao.load(id);
 	}
 
 	@Override
 	public T get(PK id) {
-		return baseDao.get(id);
+		return (T) baseDao.get(id);
 	}
 
 	@Override
@@ -44,8 +40,9 @@ public class BaseServiceImpl<T, PK extends Serializable> implements BaseService<
 
 	@Override
 	public PK save(T entity) {
-		return baseDao.save(entity);
+		return (PK) baseDao.save(entity);
 	}
+	
 	@Override
 	public void saveOrUpdate(T entity) {
 		baseDao.saveOrUpdate(entity);

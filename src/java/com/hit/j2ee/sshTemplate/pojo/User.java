@@ -16,8 +16,7 @@ import com.hit.j2ee.sshTemplate.common.encrypt.MD5Util;
  * Users entity. @author MyEclipse Persistence Tools
  */
 @Entity
-@Table(name = "Users", schema = "dbo", catalog = "template")
-
+@Table(name = "Users")
 public class User implements java.io.Serializable {
 
 	// Fields
@@ -174,7 +173,7 @@ public class User implements java.io.Serializable {
 		this.version = version;
 	}
 
-	@Column(name = "is_deleted", nullable = false)
+	@Column(name = "isDeleted", nullable = false)
 
 	public Boolean getIsDeleted() {
 		return this.isDeleted;
