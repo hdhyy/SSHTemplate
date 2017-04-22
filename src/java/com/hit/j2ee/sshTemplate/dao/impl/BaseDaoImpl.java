@@ -92,6 +92,7 @@ public class BaseDaoImpl<T, PK extends Serializable> extends HibernateDaoSupport
 		}
 
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	@Override

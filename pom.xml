@@ -100,7 +100,13 @@
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<version>2.2</version>
+			<version>3.2.5</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>asm</artifactId>
+					<groupId>asm</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -138,13 +144,15 @@
 			<version>1.0.0.Final</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.javassist/javassist <dependency> 
+			<groupId>org.javassist</groupId> <artifactId>javassist</artifactId> <version>3.21.0-GA</version> 
+			</dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
 		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.20.0-GA</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -161,7 +169,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
+			<version>3.5</version>
 		</dependency>
 
 		<dependency>
@@ -203,7 +211,7 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.5</version>
+			<version>2.8.1</version>
 		</dependency>
 
 		<!-- http://mvnrepository.com/artifact/org.apache.tiles/tiles-core -->
@@ -213,7 +221,7 @@
 			<version>3.0.3</version>
 		</dependency>
 
-		<!-- http://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
@@ -355,17 +363,17 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.5.2</version>
+			<version>2.5.10</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-convention-plugin</artifactId>
-			<version>2.5.2</version>
+			<version>2.5.10</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
-			<version>2.5.2</version>
+			<version>2.5.10</version>
 		</dependency>
 
 	</dependencies>
@@ -375,7 +383,7 @@
 		<testSourceDirectory>src/test/</testSourceDirectory>
 		<resources>
 			<resource>
-				<directory>java</directory>
+				<directory>java/</directory>
 				<excludes>
 					<exclude>*.java</exclude>
 				</excludes>
@@ -384,6 +392,7 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.2</version>
 				<configuration>
 					<source>1.8</source>        <!-- 指定jdk版本, 可避免update project时, 自动切换低版本 -->
 					<target>1.8</target>
